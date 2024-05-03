@@ -1,7 +1,7 @@
 from transformers import pipeline
 
 text_classification_pipeline = pipeline(
-    model = "llm-book/bert-base-japanese-v3-marc_ja"
+    model = "llm-book/bert-base-japanese-v3-marc_ja",
 )
 
 positive_text = "私は今日も元気です。"
