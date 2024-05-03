@@ -17,9 +17,23 @@ def visualize_text_length(dataset: Dataset):
     plt.ylabel("事例数")
     plt.show()
 
-visualize_text_length(train_dataset)
-visualize_text_length(valid_dataset)
+# visualize_text_length(train_dataset)
+# visualize_text_length(valid_dataset)
 
-for data in valid_dataset:
-  if len(tokenizer.tokenize(data["sentence"])) < 10:
-    pprint(data)
+# for data in valid_dataset:
+#   if len(tokenizer.tokenize(data["sentence"])) < 10:
+#     pprint(data)
+
+def visualize_labels(dataset: Dataset):
+    label_counter = Counter()
+    for data in dataset:
+        label_id = data["label"]
+        label_name = dataset.features["label"].names[label_id]
+        label_counter[label_name] += 1
+    plt.bar(label_counter.keys(), label_counter.values(), width=1.0)
+    plt.xlabel("ラベル")
+    plt.ylabel("事例数")
+    plt.show()
+
+visualize_labels(train_dataset)
+visualize_labels(valid_dataset)
