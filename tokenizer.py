@@ -1,4 +1,5 @@
 from transformers import AutoTokenizer
+from pprint import pprint
 
 model_name = "cl-tohoku/bert-base-japanese-v3"
 
