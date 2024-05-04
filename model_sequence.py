@@ -1,4 +1,6 @@
 from transformers import AutoModelForSequenceClassification
+from emotional_analysis.data import endcoded_train_dataset, data_collator, train_dataset
+from emotional_analysis import model_name
 
 class_label = train_dataset.features['label']
 label2id = {label: id for id, label in enumerate(class_label.names)}
